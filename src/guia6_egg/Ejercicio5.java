@@ -21,9 +21,9 @@ public class Ejercicio5 {
         double num,doble,triple,raiz;
         System.out.println("Ingrese un número");
         num = leer.nextInt();
-        doble = num*num;
+        doble = num*2;
         System.out.println("El doble del número es:"+doble);
-        triple = num*num*num;
+        triple = num*3;
         System.out.println("El triple del número es:"+triple);
         raiz = Math.sqrt(num); 
         System.out.println("La raíz cuadrada es:" +raiz);
