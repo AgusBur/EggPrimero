@@ -7,14 +7,14 @@ public class Ejercicio11 {
 
     public static void main(String[] args) {
     Scanner leer = new Scanner(System.in);
-    double num1,num2;
+    int num1,num2;
         System.out.println("Ingrese 2 números:");
-        num1 = leer.nextDouble();
-        num2 = leer.nextDouble();
+        num1 = leer.nextInt();
+        num2 = leer.nextInt();
         int opcion,fin;
         String op2;
         fin=1;
-       while (fin != 0) {
+       while (fin == 1) {
            System.out.println("Menú");
            System.out.println("Elegir una ocpión:");
            System.out.println("1: Sumar");
@@ -37,14 +37,15 @@ public class Ejercicio11 {
                    System.out.println("La división es: "+ (num1/num2));
                    break;
                case 5: 
-                   System.out.println("Desea salir? S/N");
-                   op2=leer.nextLine();
-                   if (op2 == "S") {
-                       System.out.println("Salir");
+                   System.out.println("Desea salir? s/n");
+                   op2=leer.next();
+                   String op2nueva = op2.toLowerCase();
+                   if (op2nueva.equals("s")) {
                        fin=0;
+                       break;
                    }         
            }
        }
-        System.out.println("Gracias por usar el programa");
+        System.out.println("Gracias por usar el programa. Saliendo");
     }
 }
