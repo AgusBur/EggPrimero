@@ -1,21 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package guia6_egg;
 
-/**
- *
- * @author Agustina
- */
+import java.util.Scanner;
+
 public class Ejercicio18 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner leer = new Scanner(System.in);
+        int matriz [][];
+        System.out.println("Ingrese dimensión para matriz cuadrada");
+        int largo = leer.nextInt();
+        matriz = new int [largo][largo];
+        
+        for (int i = 0; i <largo; i++) {
+            for (int j = 0; j <largo; j++) {
+                matriz[i][j] = (int) (Math.random()*10);
+            }        
+        }
+        for (int i = 0; i <largo; i++) {
+            for (int j = 0; j <largo; j++) {
+                System.out.print("[ " + matriz[i][j]+ " ]");
+            } 
+            System.out.println("");
+        }
+        System.out.println("-------------------------");
+        System.out.println("La matriz traspuesta es:");
+        System.out.println("--------------------------");
+        for (int i = 0; i <largo; i++) {
+            for (int j = 0; j <largo; j++) {
+                System.out.print("[ " + matriz[j][i]+ " ]");
+            }   
+            System.out.println("");
+        }
     }
     
 }
