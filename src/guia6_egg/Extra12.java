@@ -11,9 +11,16 @@ public class Extra12 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         
-        int cont1=0,cont2=0,cont3=0;
-        String cad="E";
+        String [] vector;
+        vector = new String [1000];
         
+        for (int i = 0; i <1000; i++) {
+            vector[i]=Integer.toString(i).replace("3", "E");
+        }
+        
+        for (int i = 0; i <1000; i++) {
+            System.out.println(vector[i]);
+        }
         
     }
     
