@@ -20,8 +20,8 @@ public class Ejercicio12 {
            int longi=cadena.length();
             String cadenaN = cadena.toLowerCase();
             
-          if ((longi == 5) && (cadenaN.substring(0,1).equals("x")==true) &&
-                  (cadenaN.substring(4,5).equals("o")==true)) {
+          if ((longi <= 5) && (cadenaN.substring(0,1).equals("x")==true) &&
+                  (cadenaN.substring(longi-1).equals("o")==true)) {
             conC+=1;
         } else {
               conI+=1;

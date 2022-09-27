@@ -1,3 +1,8 @@
+/*Crea una aplicación que a través de una función nos convierta una cantidad de euros
+introducida por teclado a otra moneda, estas pueden ser a dólares, yenes o libras. La
+función tendrá como parámetros, la cantidad de euros y la moneda a converir que será
+una cadena, este no devolverá ningún valor y mostrará un mensaje indicando el cambio
+(void).*/
 
 package guia6_egg;
 
@@ -9,34 +14,28 @@ public class Ejercicio14 {
        Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese la cantidad de euros a convertir:");
         double euros = leer.nextDouble();
-
-        System.out.println("A que moneda quiere cambiar:");
-        System.out.println("1)Dólares - 2)Yenes - 3)Libras");
-        int opc = leer.nextInt();
-        
-        switch (opc) {
-            case 1: cambioEuro(euros,1.28,opc);
-            break;
-            case 2: cambioEuro(euros,129.8,opc);
-            break;
-            case 3: cambioEuro(euros,0.86,opc);
-            break;
-            default: System.out.println("Ingresó opción inválida");
-            break;
-        }
-        
+        String moneda;
+        boolean bandera;
+        do {            
+            System.out.println("A que moneda quiere cambiar: dolares, yenes o libras");
+            moneda = leer.next();
+        if (bandera = moneda.equalsIgnoreCase("dolares")||moneda.equalsIgnoreCase("yenes")|| 
+                    moneda.equalsIgnoreCase("libras")){
+         }else{
+                System.out.println("Incorrecto");
+            }
+        } while (bandera==false);
+        cambioEuro(euros, moneda);
     }
     
-    public static void cambioEuro(double euros,double b, int opc){
-        double resultado;
-        resultado = (euros * b) ; 
-         switch (opc) {
-            case 1: System.out.println("Tendrás: "+ resultado + " en dólares");
-            break;
-            case 2: System.out.println("Tendrás: "+ resultado + " en yenes");
-            break;
-            case 3: System.out.println("Tendrás: "+ resultado + " en libras");
-            break;
+    public static void cambioEuro(double euros,String moneda){
+       
+        if (moneda.equalsIgnoreCase("dolares")) {
+            System.out.println("Tendrás "+(euros*1.28)+" dólares");
+        } else if (moneda.equalsIgnoreCase("yenes")) {
+            System.out.println("Tendrás "+(euros*129.852)+" yenes");
+        } else if (moneda.equalsIgnoreCase("libras")){
+            System.out.println("Tendrás "+(euros*0.86)+" libras");
         }
     }
 }

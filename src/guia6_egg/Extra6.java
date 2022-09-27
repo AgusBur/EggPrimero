@@ -8,7 +8,7 @@ public class Extra6 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         double altura, personas, promChico=0, promGral=0;
-        int contador=1, contChico=1;
+        int contador=0, contChico=0;
         
         System.out.println("Ingrese núm de personas:");
         personas=leer.nextInt();
@@ -24,9 +24,9 @@ public class Extra6 {
             contador++;
         }
         
-        System.out.println("Altura promedio de personas <1,60 m:");
-        System.out.println(promChico+" ingresaste "+contChico+" persona/s");
-        System.out.println("Altura promedio de las"+personas+" es: "+promGral);
+        System.out.println("Altura promedio de personas <1,60 m: "+promChico);
+        System.out.println(" ingresaste "+contChico+" persona/s");
+        System.out.println("Altura promedio de las "+contador+" es: "+promGral);
         
     }
     
