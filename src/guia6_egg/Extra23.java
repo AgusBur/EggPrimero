@@ -34,11 +34,11 @@ public class Extra23 {
         do {            
             System.out.println("Ingrese palabra para la sopa de letras"); 
             palabra = leer.next();
-            if (verificarPalabra(palabra)==true) {
-                System.out.println("Agregando palabras...");
+            if (verificarPalabra(palabra)) {
                 filaAleatoria(matrizSopa,palabra);
                 completarSopa(matrizSopa);
                 System.out.println("Bien!Palabra "+(contador+1)+" cargada");
+                System.out.println("-------------------------------------");
                 contador+=1;
             }
         } while (contador<5);
@@ -101,9 +101,12 @@ public class Extra23 {
             String palabra, int filax) {
         
         int k=0;
+        int m;
+        m = (int)(Math.random()*15+0);
         for (int i = 0; i <palabra.length(); i++) {
-            matrizSopa [filax][i] = ""+palabra.charAt(k);
+            matrizSopa [filax][m] = ""+palabra.charAt(k);
             k+=1;
+            m+=1;
         }    
     }
     
