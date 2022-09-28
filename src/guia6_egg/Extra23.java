@@ -22,13 +22,6 @@ public class Extra23 {
        int contador=0;
        String [] [] matrizSopa = new String [20][20];
        
-        //Cargo a la sopa previamente con "-" para que no me salte error:
-        for (int i = 0; i <20; i++) {
-            for (int j = 0; j <20; j++) {
-                
-                matrizSopa[i][j] = "-";
-            }     
-        }
        
        System.out.println("Ingrese 5 palabras para la sopa de letras");
         do {            
@@ -122,7 +115,7 @@ public class Extra23 {
                 
                 num = (int)(Math.random()*9+0);
                 numTexto=Integer.toString(num);
-                if (matrizSopa[i][j].equalsIgnoreCase("-")) {
+                if (matrizSopa[i][j]==null) {
                     matrizSopa[i][j] = numTexto;
                 }
             }    
@@ -131,7 +124,7 @@ public class Extra23 {
     
     public static void mostrarSopa(String[][]matrizSopa, String buscar) {
         
-        System.out.println("Buscar:");
+        System.out.println("Buscar horizontalmente:");
         System.out.print(buscar);
         System.out.println("");
         System.out.println("----------------------------");
