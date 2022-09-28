@@ -18,11 +18,11 @@ public class Extra23 {
        Scanner leer = new Scanner(System.in);
        
        String palabra;
-       String [] vectorPalabras = new String [5];
+       String buscar="";
        int contador=0;
        String [] [] matrizSopa = new String [20][20];
        
-        //Cargo a la sopa previamente con " " para que no me salte error:
+        //Cargo a la sopa previamente con "-" para que no me salte error:
         for (int i = 0; i <20; i++) {
             for (int j = 0; j <20; j++) {
                 
@@ -35,6 +35,7 @@ public class Extra23 {
             System.out.println("Ingrese palabra para la sopa de letras"); 
             palabra = leer.next();
             if (verificarPalabra(palabra)) {
+                buscar += palabra+"-";
                 filaAleatoria(matrizSopa,palabra);
                 completarSopa(matrizSopa);
                 System.out.println("Bien!Palabra "+(contador+1)+" cargada");
@@ -43,8 +44,8 @@ public class Extra23 {
             }
         } while (contador<5);
 
-        System.out.println("La sopa cargada quedaría...");
-        mostrarSopa(matrizSopa);
+        System.out.println("Sopa cargada!!");
+        mostrarSopa(matrizSopa,buscar);
   
        
     }
@@ -76,19 +77,19 @@ public class Extra23 {
                 } else if (i!=0 && contador<5) {
                     do {                        
                         for (int j = 0; j < 5; j++) {
-                            if (vectorFila[i]==filax) {
+                            if ((vectorFila[j])==filax) {
                                 bandera=true;
                                 break;
                             } else {
                                 bandera=false;
                             }
                         }
-                        if (bandera==true) {
+                        if (bandera) {
                             filax = (int)(Math.random()*20+0); 
                         }
                     } while (bandera==true);
                 
-                    if (bandera==false) {
+                    if (!bandera) {
                         vectorFila[i]=filax;
                         contador+=1;
                     }
@@ -128,13 +129,17 @@ public class Extra23 {
         }
     }
     
-    public static void mostrarSopa(String[][]matrizSopa) {
+    public static void mostrarSopa(String[][]matrizSopa, String buscar) {
         
+        System.out.println("Buscar:");
+        System.out.print(buscar);
+        System.out.println("");
+        System.out.println("----------------------------");
         for (int i = 0; i <20; i++) {
             for (int j = 0; j <20; j++) {
-                System.out.print(" [ "+matrizSopa[i][j]+" ] ");
+                System.out.print("["+matrizSopa[i][j]+"]");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
     }
 }
